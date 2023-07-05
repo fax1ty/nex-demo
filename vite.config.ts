@@ -9,6 +9,7 @@ import svgr from "vite-plugin-svgr";
 dns.setDefaultResultOrder("verbatim");
 
 export default defineConfig({
+  assetsInclude: ["**/*.glb", "**/*.hdr"],
   server: {
     host: "localhost",
     port: 3000,
