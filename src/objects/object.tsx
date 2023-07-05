@@ -12,12 +12,20 @@ export type ObjectProps = {
 } & RigidBodyProps;
 
 export const SpawnableObject = ({ kind, ...props }: ObjectProps) => {
-  if (kind === "cube") return <CubeWithRandomForce {...props} />;
-  if (kind === "rugby") return <RugbyBall {...props} />;
-  if (kind === "basketball") return <Basketball {...props} />;
-  if (kind === "socker") return <SockerBall {...props} />;
-  if (kind === "microphone") return <Microphone {...props} />;
-  if (kind === "crown") return <Crown {...props} />;
-
-  return null;
+  switch (kind) {
+    case "cube":
+      return <CubeWithRandomForce {...props} />;
+    case "rugby":
+      return <RugbyBall {...props} />;
+    case "basketball":
+      return <Basketball {...props} />;
+    case "socker":
+      return <SockerBall {...props} />;
+    case "microphone":
+      return <Microphone {...props} />;
+    case "crown":
+      return <Crown {...props} />;
+    default:
+      return null;
+  }
 };
