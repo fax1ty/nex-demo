@@ -4,7 +4,7 @@ import { RigidBody, RigidBodyProps } from "@react-three/rapier";
 import { useRandomSpawnPoint } from "../use-random-spawn";
 import model from "./model.glb";
 
-export const RugbyBall = (props: RigidBodyProps) => {
+export default function Rugby(props: RigidBodyProps) {
   const [position, api] = useRandomSpawnPoint();
 
   return (
@@ -19,6 +19,6 @@ export const RugbyBall = (props: RigidBodyProps) => {
       <Gltf src={model} />
     </RigidBody>
   );
-};
+}
 
 useGLTF.preload(model);

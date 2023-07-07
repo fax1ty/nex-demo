@@ -4,7 +4,7 @@ import { RigidBody, RigidBodyProps } from "@react-three/rapier";
 import { useRandomSpawnPoint } from "../use-random-spawn";
 import model from "./model.glb";
 
-export const SockerBall = (props: RigidBodyProps) => {
+export default function ScokerBall(props: RigidBodyProps) {
   const [position, api] = useRandomSpawnPoint();
 
   return (
@@ -18,6 +18,6 @@ export const SockerBall = (props: RigidBodyProps) => {
       <Gltf src={model} />
     </RigidBody>
   );
-};
+}
 
 useGLTF.preload(model);

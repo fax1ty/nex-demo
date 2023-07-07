@@ -8,7 +8,7 @@ import {
 import { useRandomSpawnPoint } from "../use-random-spawn";
 import model from "./model.glb";
 
-export const ChickenBone = (props: RigidBodyProps) => {
+export default function Bone(props: RigidBodyProps) {
   const [position, api] = useRandomSpawnPoint();
 
   return (
@@ -23,6 +23,6 @@ export const ChickenBone = (props: RigidBodyProps) => {
       <CapsuleCollider args={[0.5, 0.65]} />
     </RigidBody>
   );
-};
+}
 
 useGLTF.preload(model);

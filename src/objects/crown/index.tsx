@@ -10,7 +10,7 @@ import model from "./model.glb";
 
 const HEIGHT = 0.67;
 
-export const Crown = (props: RigidBodyProps) => {
+export default function Crown(props: RigidBodyProps) {
   const [position, api] = useRandomSpawnPoint();
 
   return (
@@ -19,6 +19,6 @@ export const Crown = (props: RigidBodyProps) => {
       <CylinderCollider args={[HEIGHT, 1]} />
     </RigidBody>
   );
-};
+}
 
 useGLTF.preload(model);

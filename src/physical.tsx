@@ -3,7 +3,8 @@ import { useEffect, useMemo, useState } from "react";
 import { randInt } from "three/src/math/MathUtils";
 
 import { useQuery } from "./hooks/use-query";
-import { ObjectKinds, SpawnableObject } from "./objects/object";
+import { ObjectKinds } from "./objects/kinds";
+import { SpawnableObject } from "./objects/object";
 import { ObjectProps } from "./objects/object";
 import { Playground } from "./playground";
 

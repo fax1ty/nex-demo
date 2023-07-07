@@ -8,7 +8,7 @@ import {
 import { useRandomSpawnPoint } from "../use-random-spawn";
 import model from "./model.glb";
 
-export const Clock = (props: RigidBodyProps) => {
+export default function Clock(props: RigidBodyProps) {
   const [position, api] = useRandomSpawnPoint();
 
   return (
@@ -23,6 +23,6 @@ export const Clock = (props: RigidBodyProps) => {
       <CylinderCollider args={[0.28, 1]} />
     </RigidBody>
   );
-};
+}
 
 useGLTF.preload(model);

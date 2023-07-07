@@ -8,7 +8,7 @@ import {
 import { useRandomSpawnPoint } from "../use-random-spawn";
 import model from "./model.glb";
 
-export const Microphone = (props: RigidBodyProps) => {
+export default function Microphone(props: RigidBodyProps) {
   const [position, api] = useRandomSpawnPoint();
 
   return (
@@ -23,6 +23,6 @@ export const Microphone = (props: RigidBodyProps) => {
       <CapsuleCollider args={[0.75, 0.42]} />
     </RigidBody>
   );
-};
+}
 
 useGLTF.preload(model);
