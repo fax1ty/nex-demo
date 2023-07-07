@@ -23,7 +23,7 @@ export const Cube = forwardRef<RapierRigidBody, CubeProps>(
 );
 
 export const CubeWithRandomForce = (props: RigidBodyProps) => {
-  const api = useRandomSpawnPoint();
+  const [position, api] = useRandomSpawnPoint();
 
-  return <Cube {...props} ref={api} colliders="cuboid" />;
+  return <Cube {...props} ref={api} colliders="cuboid" position={position} />;
 };

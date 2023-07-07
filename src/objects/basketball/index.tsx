@@ -5,10 +5,16 @@ import { useRandomSpawnPoint } from "../use-random-spawn";
 import model from "./model.glb";
 
 export const Basketball = (props: RigidBodyProps) => {
-  const api = useRandomSpawnPoint();
+  const [position, api] = useRandomSpawnPoint();
 
   return (
-    <RigidBody {...props} ref={api} colliders="ball" restitution={1}>
+    <RigidBody
+      {...props}
+      ref={api}
+      colliders="ball"
+      restitution={1}
+      position={position}
+    >
       <Gltf src={model} />
     </RigidBody>
   );

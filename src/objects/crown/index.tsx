@@ -11,10 +11,10 @@ import model from "./model.glb";
 const HEIGHT = 0.67;
 
 export const Crown = (props: RigidBodyProps) => {
-  const api = useRandomSpawnPoint();
+  const [position, api] = useRandomSpawnPoint();
 
   return (
-    <RigidBody {...props} ref={api} colliders={false}>
+    <RigidBody {...props} ref={api} colliders={false} position={position}>
       <Gltf src={model} position-y={-HEIGHT} />
       <CylinderCollider args={[HEIGHT, 1]} />
     </RigidBody>

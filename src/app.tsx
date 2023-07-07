@@ -4,6 +4,7 @@ import { useControls } from "leva";
 import { Suspense } from "react";
 
 import { CameraController } from "./camera";
+import { DebugController } from "./debug";
 import { Postprocessing } from "./effects";
 import { EnvironmentMap } from "./environment";
 import { FPSController } from "./fps";
@@ -30,21 +31,25 @@ export const App = () => {
   });
 
   return (
-    <Canvas {...CANVAS_CONFIG} dpr={window.devicePixelRatio}>
-      <Suspense fallback={null}>
-        <CameraController />
-        <EnvironmentMap />
+    <>
+      <DebugController />
 
-        <Postprocessing />
+      <Canvas {...CANVAS_CONFIG} dpr={window.devicePixelRatio}>
+        <Suspense fallback={null}>
+          <CameraController />
 
-        <FPSController />
+          <EnvironmentMap />
+          <Postprocessing />
 
-        <Suspense>
-          <Physics debug={debug}>
-            <Physical />
-          </Physics>
+          <FPSController />
+
+          <Suspense>
+            <Physics debug={debug}>
+              <Physical />
+            </Physics>
+          </Suspense>
         </Suspense>
-      </Suspense>
-    </Canvas>
+      </Canvas>
+    </>
   );
 };
