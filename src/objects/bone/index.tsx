@@ -8,13 +8,13 @@ import {
 import { useRandomSpawnPoint } from "../use-random-spawn";
 import model from "./model.glb";
 
-export const Microphone = (props: RigidBodyProps) => {
+export const ChickenBone = (props: RigidBodyProps) => {
   const api = useRandomSpawnPoint();
 
   return (
     <RigidBody {...props} ref={api} colliders={false} rotation-x={-Math.PI / 2}>
-      <Gltf src={model} />
-      <CapsuleCollider args={[0.75, 0.42]} />
+      <Gltf src={model} position-y={[0.1]} />
+      <CapsuleCollider args={[0.5, 0.65]} />
     </RigidBody>
   );
 };

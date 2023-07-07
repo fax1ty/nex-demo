@@ -5,13 +5,13 @@ import {
   RigidBodyProps,
 } from "@react-three/rapier";
 
-import { useRandomForce } from "../use-random-force";
+import { useRandomSpawnPoint } from "../use-random-spawn";
 import model from "./model.glb";
 
 const HEIGHT = 0.67;
 
 export const Crown = (props: RigidBodyProps) => {
-  const api = useRandomForce(-20, 20);
+  const api = useRandomSpawnPoint();
 
   return (
     <RigidBody {...props} ref={api} colliders={false}>

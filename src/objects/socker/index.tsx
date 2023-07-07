@@ -1,11 +1,11 @@
 import { Gltf, useGLTF } from "@react-three/drei";
 import { RigidBody, RigidBodyProps } from "@react-three/rapier";
 
-import { useRandomForce } from "../use-random-force";
+import { useRandomSpawnPoint } from "../use-random-spawn";
 import model from "./model.glb";
 
 export const SockerBall = (props: RigidBodyProps) => {
-  const api = useRandomForce(-30, 30);
+  const api = useRandomSpawnPoint();
 
   return (
     <RigidBody {...props} ref={api} colliders="ball" restitution={0.9}>

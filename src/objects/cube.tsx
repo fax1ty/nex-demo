@@ -6,7 +6,7 @@ import {
 } from "@react-three/rapier";
 import { forwardRef } from "react";
 
-import { useRandomForce } from "./use-random-force";
+import { useRandomSpawnPoint } from "./use-random-spawn";
 
 type CubeProps = RigidBodyProps & { visible?: boolean; color?: string };
 
@@ -23,7 +23,7 @@ export const Cube = forwardRef<RapierRigidBody, CubeProps>(
 );
 
 export const CubeWithRandomForce = (props: RigidBodyProps) => {
-  const api = useRandomForce(-5, 5);
+  const api = useRandomSpawnPoint();
 
   return <Cube {...props} ref={api} colliders="cuboid" />;
 };

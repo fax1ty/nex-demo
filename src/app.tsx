@@ -31,17 +31,19 @@ export const App = () => {
 
   return (
     <Canvas {...CANVAS_CONFIG} dpr={window.devicePixelRatio}>
-      <CameraController />
-      <EnvironmentMap />
+      <Suspense fallback={null}>
+        <CameraController />
+        <EnvironmentMap />
 
-      <Postprocessing />
+        <Postprocessing />
 
-      <FPSController />
+        <FPSController />
 
-      <Suspense>
-        <Physics debug={debug}>
-          <Physical />
-        </Physics>
+        <Suspense>
+          <Physics debug={debug}>
+            <Physical />
+          </Physics>
+        </Suspense>
       </Suspense>
     </Canvas>
   );
