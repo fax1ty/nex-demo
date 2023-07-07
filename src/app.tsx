@@ -8,6 +8,7 @@ import { DebugController } from "./debug";
 import { Postprocessing } from "./effects";
 import { EnvironmentMap } from "./environment";
 import { FPSController } from "./fps";
+import { Loader } from "./loader";
 import { Physical } from "./physical";
 
 const CANVAS_CONFIG = {
@@ -45,6 +46,7 @@ export const App = () => {
 
           <Suspense>
             <Physics debug={debug}>
+              <Loader />
               <Physical />
             </Physics>
           </Suspense>
